@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+    <title>ModuPay CRM</title>
+    <link rel="stylesheet" href="css/app.css" />
+    <!-- ============================================================ -->
+    <!-- إعدادات Supabase والتشفير: عدّل الأسطر اللي تحتهم من هنا ثم احفظ الملف -->
+    <!-- ============================================================ -->
+    <script>
+      window.__APP_CONFIG__ = {
+        SUPABASE_URL: "https://ekjaaftxucoloiyichtr.supabase.co",
+        SUPABASE_ANON_KEY: "sb_publishable_Pd_iwr0-l6kNRDF616GF6A_kzGSvXmy",
+        // مفتاح تشفير البيانات الحساسة قبل إرسالها لقاعدة البيانات (Requirement 2).
+        // غيّره لقيمة سرية طويلة وعشوائية قبل النشر الفعلي، واحتفظ بنسخة منه في مكان آمن —
+        // لو اتفقد المفتاح، البيانات المشفّرة (الملاحظات، بيانات الاتصال...) مش هترجع تتقرأ.
+        ENCRYPTION_KEY: "change-this-to-a-long-random-secret-before-going-live"
+      };
+    </script>
+    <!-- ============================================================ -->
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <!-- Loader: a small hand-written require()/module.exports for the browser. -->
+    <script src="js/runtime.js"></script>
+
+    <!-- Third-party libraries, one file per package. -->
+    <script src="js/vendor/react.js"></script>
+    <script src="js/vendor/react-jsx-runtime.js"></script>
+    <script src="js/vendor/react-dom-client.js"></script>
+    <script src="js/vendor/react-router-dom.js"></script>
+    <script src="js/vendor/supabase-supabase-js.js"></script>
+    <script src="js/vendor/exceljs.js"></script>
+    <script src="js/vendor/xlsx.js"></script>
+    <script src="js/vendor/crypto-js.js"></script>
+
+    <!-- This app's own code — one file per source file under src/, in the same folder layout. -->
+    <script src="js/app/App.js"></script>
+    <script src="js/app/components/AgingImportModal.js"></script>
+    <script src="js/app/components/CollapsibleSection.js"></script>
+    <script src="js/app/components/ImportButton.js"></script>
+    <script src="js/app/components/Layout.js"></script>
+    <script src="js/app/components/Modal.js"></script>
+    <script src="js/app/components/PaginationFooter.js"></script>
+    <script src="js/app/components/ProtectedRoute.js"></script>
+    <script src="js/app/components/SearchableInvoiceSelect.js"></script>
+    <script src="js/app/components/SearchableSelect.js"></script>
+    <script src="js/app/components/StatusPill.js"></script>
+    <script src="js/app/context/AuthContext.js"></script>
+    <script src="js/app/context/LanguageContext.js"></script>
+    <script src="js/app/context/ThemeContext.js"></script>
+    <script src="js/app/lib/aggregates.js"></script>
+    <script src="js/app/lib/aging.js"></script>
+    <script src="js/app/lib/audit.js"></script>
+    <script src="js/app/lib/backup.js"></script>
+    <script src="js/app/lib/crypto.js"></script>
+    <script src="js/app/lib/customerReport.js"></script>
+    <script src="js/app/lib/customerReportExcel.js"></script>
+    <script src="js/app/lib/encryptedFields.js"></script>
+    <script src="js/app/lib/exportExcel.js"></script>
+    <script src="js/app/lib/format.js"></script>
+    <script src="js/app/lib/fx.js"></script>
+    <script src="js/app/lib/guardrails.js"></script>
+    <script src="js/app/lib/importExcel.js"></script>
+    <script src="js/app/lib/repository/mutations.js"></script>
+    <script src="js/app/lib/repository/queries.js"></script>
+    <script src="js/app/lib/secureClient.js"></script>
+    <script src="js/app/lib/supabaseClient.js"></script>
+    <script src="js/app/lib/translations.js"></script>
+    <script src="js/app/lib/types.js"></script>
+    <script src="js/app/lib/ui.js"></script>
+    <script src="js/app/lib/usePaginatedList.js"></script>
+    <script src="js/app/main.js"></script>
+    <script src="js/app/pages/Audit/List.js"></script>
+    <script src="js/app/pages/Collections/List.js"></script>
+    <script src="js/app/pages/Customers.js"></script>
+    <script src="js/app/pages/Dashboard.js"></script>
+    <script src="js/app/pages/Dispatches/Form.js"></script>
+    <script src="js/app/pages/Dispatches/List.js"></script>
+    <script src="js/app/pages/FxRates/List.js"></script>
+    <script src="js/app/pages/Invoices/Form.js"></script>
+    <script src="js/app/pages/Invoices/List.js"></script>
+    <script src="js/app/pages/Login.js"></script>
+    <script src="js/app/pages/Products.js"></script>
+    <script src="js/app/pages/PurchaseOrders/Form.js"></script>
+    <script src="js/app/pages/PurchaseOrders/List.js"></script>
+    <script src="js/app/pages/Reports.js"></script>
+    <script src="js/app/pages/SalesOrders/Form.js"></script>
+    <script src="js/app/pages/SalesOrders/List.js"></script>
+    <script src="js/app/pages/Settings.js"></script>
+
+    <!-- Starts the app. -->
+    <script src="js/boot.js"></script>
+  </body>
+</html>
